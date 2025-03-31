@@ -1,0 +1,90 @@
+.App {
+  text-align: center;
+}
+
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4列のグリッド */
+  gap: 10px; /* 各ポケモンの間のスペース */
+  justify-content: center;
+  padding: 0 20px; /* 両端に余裕を追加 */
+}
+
+.pokemon {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.pokemon img {
+  width: 100px;
+  height: 100px;
+}
+/* モーダルのオーバーレイ（背景の暗転部分） */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* 半透明の黒背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* モーダルのコンテンツ部分 */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 閉じるボタン */
+.modal-content button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content button:hover {
+  background: #cc0000;
+}
+
+/* 進化チェーンのスタイル */
+.evolution-chain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.evolution-chain span {
+  margin: 0 5px;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
